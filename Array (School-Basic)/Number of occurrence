@@ -1,0 +1,30 @@
+class Solution {
+    
+    int binarySearch(int arr[],int ele){
+        int start=0,end=arr.length-1;
+        while (start<=end){
+            int mid  = start+(end-start)/2;
+            if (arr[mid]==ele) return mid;
+            else if (arr[mid]>ele) end = mid-1;
+            else start = mid+1;
+        }
+        return -1;
+    }
+    int count(int[] arr, int n, int ele) {
+        int pos = binarySearch(arr,ele);
+        if (pos==-1) return 0;
+        
+        int count =0;
+        int left = pos-1;
+        while(left>=0 && arr[left]==ele){
+            count++;
+            left--;
+        }
+        int right=pos;
+        while(right<arr.length && arr[right]==ele){
+            count++;
+            right++;
+        }
+        return count;
+    }
+}
