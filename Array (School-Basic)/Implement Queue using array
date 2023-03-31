@@ -1,0 +1,29 @@
+class MyQueue {
+
+    int f, r;
+	int arr[] = new int[100005];
+
+    MyQueue()
+	{
+		f=0;
+		r=0;
+	}
+	
+	//Function to push an element x in a queue.
+	void push(int x) {
+	    if(r==arr.length-1){
+	        System.out.println("Full");
+	    }
+		arr[r++] = x;
+	}
+
+	// Function to pop an element from queue and return that element.
+	int pop() {
+		if (f == r ) {
+			return -1;
+		}
+		int value = arr[f];
+		f++;
+		return value;
+	}
+}
