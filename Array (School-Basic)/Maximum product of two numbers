@@ -1,0 +1,10 @@
+class Solution {
+    int maxProduct(int arr[], int n) {
+        
+        Arrays.sort(arr);
+        int t= arr[n-2]*arr[n-1];
+        return t;
+        
+        
+    }
+}
