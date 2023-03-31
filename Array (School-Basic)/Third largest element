@@ -1,0 +1,10 @@
+class Solution
+{
+    int thirdLargest(int a[], int n)
+    {
+	    int l=a.length;
+	    Arrays.sort(a);
+	    int t=a[l-3];
+	    return t;
+    }
+}
