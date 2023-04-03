@@ -1,0 +1,22 @@
+//User function Template for Java
+
+
+class Solution {
+
+    public static String PartyType( long a[], int n)
+    {
+        HashSet<Long> hs=new HashSet<>();
+        for(int i=0;i<n;i++)
+        {
+            if(hs.contains(a[i])==true)
+            {
+                return "BOYS";
+            }
+            else
+            {
+                hs.add(a[i]);
+            }
+        }
+        return "GIRLS";
+    }
+}
