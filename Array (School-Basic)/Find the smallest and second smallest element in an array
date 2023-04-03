@@ -1,0 +1,24 @@
+
+class Compute 
+{
+    public long[] minAnd2ndMin(long a[], long n)  
+    
+    {
+        Arrays.sort(a);
+         for(int i=1;i<n;i++)
+
+        {
+
+            long temp = a[0];
+
+            if(a[i]>temp){
+
+                return new long[] {temp,a[i]}; 
+
+            }
+
+        }
+
+        return new long[] {-1,-1};
+    }
+}
