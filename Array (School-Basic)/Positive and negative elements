@@ -1,0 +1,32 @@
+
+class Solution
+{
+    ArrayList<Long> arranged(long a[], int n)
+    {
+        ArrayList<Long> al=new ArrayList<>();
+        long b[]=new long[n];
+        int pos=0;
+        int neg=1;
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]>0)
+            {
+                b[pos]=a[i];
+                pos=pos+2;
+                
+            }
+            else
+            {
+                b[neg]=a[i];
+                neg=neg+2;
+            }
+        }
+
+     for(int i=0;i<n;i++)
+     {
+         al.add(b[i]);
+     }
+     return al;
+
+    }
+}
