@@ -1,0 +1,12 @@
+class Solution
+{
+    long minDiff(long a[] ,int n,int k)
+    {
+        Arrays.sort(a);
+        long minDifference = Integer.MAX_VALUE;
+        for(int i = 0;i<n-k+1;i++){
+            minDifference = Math.min(minDifference,a[i+k-1]-a[i]);
+        }    
+        return minDifference;
+    }
+}
