@@ -1,0 +1,23 @@
+
+class Solution {
+    String firstAlphabet(String S) {
+        
+        String u="";
+        char f=S.charAt(0);
+        u=u+f;
+        int l=S.length();
+        
+        for(int i=1;i<l;i=i+1){
+            
+            char c=S.charAt(i);
+            
+            if(c==' ' ){
+                
+                char c2=S.charAt(i+1);
+                u=u+c2;
+                
+            }
+        }
+        return u;
+    }
+}
