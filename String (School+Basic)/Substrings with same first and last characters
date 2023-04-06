@@ -1,0 +1,47 @@
+
+class Solution {
+    int countSubstringWithEqualEnds(String s) {
+      
+        int count=0;
+        for(int i=0;i<s.length();i++){
+            
+            for(int j=i;j<s.length();j++){
+                
+                if(s.charAt(i)==s.charAt(j)){
+                    
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}
+
+/*
+class Solution {
+    int countSubstringWithEqualEnds(String s) {
+        // code here
+        
+        HashMap<Character,Integer> hm = new HashMap<>();
+        
+        for(int i=0; i<s.length(); i++){
+            hm.put(s.charAt(i),hm.getOrDefault(s.charAt(i),0)+1);
+        }
+        
+        int ans = s.length();
+        
+        for(Character k : hm.keySet()){
+            
+            if(hm.get(k)>1){
+                
+                int n = hm.get(k);
+                ans =ans + (n*(n-1))/2;
+                
+            }
+        }
+        
+        return ans;
+    }
+}
+
+*/
