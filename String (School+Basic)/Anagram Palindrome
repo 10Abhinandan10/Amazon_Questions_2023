@@ -1,0 +1,31 @@
+
+class Sol
+{
+    int isPossible (String S)
+    {
+        // your code here
+        HashMap<Character,Integer> map=new HashMap<>();
+        
+        for(int i=0;i<S.length();i++)
+        {
+            char ch=S.charAt(i);
+            map.put(ch,map.getOrDefault(ch,0)+1);
+        }
+        
+        int count=0;
+        
+        for(Map.Entry<Character,Integer> set: map.entrySet())
+        {
+            if(set.getValue()%2==1)
+            {
+               count++; 
+            }
+            
+        }
+        if(count>1)
+        {
+            return 0;
+        }
+        return 1;
+    }
+}
