@@ -1,0 +1,39 @@
+
+public static String printNumber(String s, int n) 
+{
+    //Your code here
+    
+    String ans="";
+    int l=s.length();
+    
+    for(int i=0; i<l; i++){
+        char ch=s.charAt(i);
+        
+        if(ch=='a' || ch=='b' || ch=='c'){
+            ans=ans+'2';
+        }
+        else if(ch=='d' || ch=='e' || ch=='f'){
+            ans=ans+'3';
+        }
+        else if(ch=='g' || ch=='h' || ch=='i'){
+            ans=ans+'4';
+        }
+        else if(ch=='j' || ch=='k' || ch=='l'){
+            ans=ans+'5';
+        }
+        else if(ch=='m' || ch=='n' || ch=='o'){
+            ans=ans+'6';
+        }
+        else if(ch=='p' || ch=='q' || ch=='r' || ch=='s'){
+            ans=ans+'7';
+        }
+        else if(ch=='t' || ch=='u' || ch=='v'){
+            ans=ans+'8';
+        }
+        else if(ch=='w' || ch=='x' || ch=='y' || ch=='z'){
+            ans=ans+'9';
+        }
+    }
+    
+    return ans;
+}
