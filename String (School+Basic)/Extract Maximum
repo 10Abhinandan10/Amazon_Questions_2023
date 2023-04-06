@@ -1,0 +1,30 @@
+
+//User function Template for Java
+
+class Solution 
+{ 
+    static int extractMaximum(String str) 
+    { 
+        // code here
+        int ans = -1;
+		String t = "";
+		int i = 0;
+		
+		while (i < str.length()) {
+			
+			while (i < str.length() && Character.isDigit(str.charAt(i))==true) {
+
+				t = t + str.charAt(i);
+				i++;
+			}
+			
+			if (t != ""){
+			    ans=Math.max(Integer.parseInt(t),ans);
+			}
+				
+			t = "";
+			i++;
+		}
+		return ans;
+    }    
+}
