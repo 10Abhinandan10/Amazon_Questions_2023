@@ -1,0 +1,34 @@
+
+//User function Template for Java
+
+class Solution{
+    boolean isSubSequence(String A, String B){
+        
+        int al = A.length();
+        int bl = B.length();
+        
+        int i=0,j=0,count=0;
+        
+        while(j<bl)
+        {
+            if(A.charAt(i) == B.charAt(j)){
+                
+                count=count+1;
+                
+                if(count == al){
+                    return true;
+                }
+                
+                i++;
+                j++;
+                
+            }else{
+                
+                j++;
+                
+            }
+        }
+        
+        return false;
+    }
+}
