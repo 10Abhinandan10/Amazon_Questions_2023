@@ -1,0 +1,21 @@
+class Solution 
+{ 
+    String firstRepChar(String s) 
+    { 
+      HashMap<Character,Integer> map=new HashMap<>();
+      
+        for(int i=0;i<s.length();i++){
+            
+            String k=s.charAt(i)+"";
+            
+            if(map.containsKey(s.charAt(i))==true){
+                return k;
+            }else {
+                map.put(s.charAt(i), 1);
+            }
+        }
+        
+        String t="-1"+"";
+        return t;
+    }
+} 
