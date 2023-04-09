@@ -1,0 +1,56 @@
+class Solution
+{
+    String UncommonChars(String A, String B)
+    {
+        
+        ArrayList<Character> alist = new ArrayList<>();
+        
+        HashSet<Character> hset1 = new HashSet<>();
+        
+        HashSet<Character> hset2 = new HashSet<>();
+        
+        for(int i = 0;i<A.length();i++){
+            
+            hset1.add(A.charAt(i));
+        }
+        
+        for(int i = 0;i<B.length();i++){
+            
+            hset2.add(B.charAt(i));
+            
+            if(hset1.contains(B.charAt(i))!=true){
+                
+                if(alist.contains(B.charAt(i))!=true){
+                    
+                    alist.add(B.charAt(i));
+                }
+            }
+        }
+        
+        for(int i = 0;i<A.length();i++){
+            
+            if(hset2.contains(A.charAt(i))!=true){
+                
+                if(alist.contains(A.charAt(i))!=true){
+                    
+                    alist.add(A.charAt(i));
+                }
+            }
+        }
+        
+        
+        Collections.sort(alist);
+        
+        if(alist.size()>0){
+            
+            String str = "";
+            
+            for(int i = 0;i<alist.size();i++){
+                char c=alist.get(i);
+                str = str + c;
+            } 
+            return str;
+        }
+        return "-1";
+    }
+}
