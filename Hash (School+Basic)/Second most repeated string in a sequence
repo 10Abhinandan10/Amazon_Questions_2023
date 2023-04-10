@@ -1,0 +1,36 @@
+//User function Template for Java
+class Solution
+{
+    String secFrequent(String arr[], int N)
+    {
+        // your code here
+        int maxi = 0;
+        
+        HashMap<String , Integer> mp = new HashMap<>();
+        
+        for(int i =0;i<arr.length;i++){
+            
+            mp.put(arr[i],mp.getOrDefault(arr[i],0)+1);
+            
+            maxi = Math.max(maxi,mp.get(arr[i]));
+            
+        }
+        int sec_maxi = Integer.MIN_VALUE;
+        
+        String ans ="";
+        
+        for (HashMap.Entry<String, Integer> entry : mp.entrySet()) {
+            
+            if (entry.getValue() < maxi && entry.getValue() > sec_maxi) {
+                
+                ans = entry.getKey();
+                
+                sec_maxi = entry.getValue();
+            
+                
+            }
+        }
+        return ans;
+        
+    }
+}
