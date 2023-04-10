@@ -1,0 +1,28 @@
+
+class Solution{
+    // Function for finding maximum and value pair
+    public static boolean areElementsContiguous (int arr[], int n) {
+        //Complete the function
+        ArrayList<Integer> list = new ArrayList<>();
+        HashSet<Integer> set = new HashSet<>();
+        for(int i=0; i<n; i++){
+            if(!set.contains(arr[i])){
+                set.add(arr[i]);
+            }
+        }
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        
+        for(int i=0; i<n; i++){
+            max = Math.max(max,arr[i]);
+        }
+        for(int i=0; i<n; i++){
+            min = Math.min(min,arr[i]);
+        }
+        
+        if((max-min)+1 == set.size()){
+            return true;
+        }
+        return false;
+    }
+}
