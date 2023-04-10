@@ -1,0 +1,50 @@
+/*
+    class Node
+    {
+        int data;
+        Node next;
+        Node(int d) {data = d; next = null; }
+    }
+*/
+
+class Sol
+{
+	public static Node findUnion(Node head1,Node head2){
+	    
+	    Node dummy = new Node(-1);
+	    
+	    List<Integer> s = new ArrayList<>();
+	    
+	    Node r = dummy;
+	    
+	    for(Node i=head1; i!=null; i=i.next) {
+	        
+	        if(s.contains(i.data)!=true){
+	            
+	            s.add(i.data);
+	        }
+	  
+	    }
+	    
+	    for(Node i=head2; i!=null; i=i.next) {
+	        
+	        if(s.contains(i.data)!=true){
+	            
+	            s.add(i.data);
+	        }
+	            
+	    }
+	    
+	    Collections.sort(s);
+	    
+	    for(int i=0; i<s.size(); i++) {
+	        
+	        r.next = new Node(s.get(i));
+	        
+	        r=r.next;
+	       // s.remove(i);
+	    }
+	    
+	    return dummy.next;
+	}
+}
